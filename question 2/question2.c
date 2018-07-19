@@ -8,13 +8,12 @@
 #define BUFF_SIZE 70
 #define MAX_T 10
 
+double f(double x, double t);
+
 int main () {
   unsigned int k = 0, N = 10, varN = 100;
-  double tau, x, xDot, newXDot, newX;
+  double tau, x = 0, k1, k2;
   char *filename = malloc(BUFF_SIZE * sizeof(*filename));
-
-  x = 0;
-  xDot = 0;
 
   while ( N < MAX_POINTS ) {
     // x_{i+1} = x_i + tau*xDot_i
@@ -23,14 +22,21 @@ int main () {
 
     tau = (double)MAX_T/N;
     for (unsigned int i = 0; i < N; i++) {
-      xDot = -pow(x,3) + sin(i*tau);
-      newX = x + tau*xDot;
-      fprintf(fPtr, "%lf\t%lf\n", i*tau, newX);
+      k1 = tau*f(x, i*tau);
+      k2 = tau*f(x+k1/2, tau*(i+1/2));
+      x +=  k2;
+
+      fprintf(fPtr, "%lf\t%lf\n", i*tau, x);
     }
 
   N *= varN;
+  x = 0;
   fclose(fPtr);
 }
 
   printf("Done!\n");
+}
+
+double f(double x, double t) {
+  return (sin(t) - pow(x,3));
 }
