@@ -4,7 +4,7 @@
 
 // #define NUM_POINTS 10E3
 // #define TAU 1/NUM_POINTS
-#define MAX_POINTS 10E5
+#define MAX_POINTS 10E3
 #define BUFF_SIZE 70
 #define MAX_T 10
 
@@ -15,7 +15,7 @@ int main () {
   double tau, x = 0, k1, k2;
   char *filename = malloc(BUFF_SIZE * sizeof(*filename));
 
-  while ( N < MAX_POINTS ) {
+  while ( N < (MAX_POINTS * varN) ) {
     snprintf(filename, BUFF_SIZE, "graph%d.dat", ++k);
     FILE *fPtr = fopen(filename, "w");
 

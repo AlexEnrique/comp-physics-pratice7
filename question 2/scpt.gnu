@@ -1,5 +1,5 @@
 #set multiplot layout 1,3
-set yr[-1.25:1.45]
+#set yr[-1.25:1.45]
 
 # 1
 plot 'graph1.dat' w l title '10 points'
@@ -8,6 +8,6 @@ plot 'graph1.dat' w l title '10 points'
 replot 'graph2.dat' w l title '100 points'
 
 # 3
-replot 'graph2.dat' w l title '1000 points'
+replot 'graph3.dat' w l title '1000 points'
 
 #unset multiplot
