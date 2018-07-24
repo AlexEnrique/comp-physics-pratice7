@@ -11,11 +11,14 @@ double f(double x, double t);
 void RungeKutta4(double (*f)(double x, double t), int n, double tI, double tF, double yI);
 
 int main () {
+  unsigned int n = N_I;
   double yI = 0.0, tI = 0.0, tF = 10.0;
 
-  for (int n = N_I; n < N_F; n *= STEP_N) {
+  do {
     RungeKutta4(f, n, tI, tF, yI);
-  }
+    n *= STEP_N;
+
+  } while (n < N_F * STEP_N)
 
   return 0;
 }
