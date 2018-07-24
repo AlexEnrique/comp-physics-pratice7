@@ -5,9 +5,9 @@ set yr[-1.25:1.45]
 plot 'graph1.dat' w l title '10 points'
 
 # 2
-replot 'graph2.dat' w l title '1000 points'
+replot 'graph2.dat' w l title '100 points'
 
 # 3
-replot 'graph2.dat' w l title '100000 points'
+replot 'graph2.dat' w l title '1000 points'
 
-unset multiplot
+#unset multiplot
