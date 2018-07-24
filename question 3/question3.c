@@ -4,7 +4,7 @@
 
 #define N_I 10
 #define STEP_N 10 // N *= STEP_N
-#define N_F 10E4
+#define N_F 10E3
 #define BUFF_SIZE 30
 
 double f(double x, double t);
