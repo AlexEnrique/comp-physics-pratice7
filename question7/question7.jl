@@ -15,33 +15,28 @@ function main()
     g = 9.8
     L = g
     y = [.2, .0]
+    z = [.2-.003, .0]
     dt = .04
     t = .0
     tF = 15.0
     params = [g, L, q, Fd, OmegaD] # apenas para tornar o código mais legível
     c = [[.0, .0], [.0, .0], [.0, .0], [.0, .0]] # inicialização dos c[i][j]
-    auxY = Float64[375]
 
-    i = 1
     while ((t+=dt) < tF)
         c[1] = dt * G(y, t, params)
         c[2] = dt * G(y + c[1]/2, t + dt/2, params)
         c[3] = dt * G(y + c[2]/2, t + dt/2, params)
         c[4] = dt * G(y + c[3], t + dt, params)
-        push!(auxY, auxY[i] + (c[1][1] + 2*c[2][1] + 2*c[3][1] + c[4][1])/6)
-        i += 1
-    end
 
-    i = 1
-    t = .0
-    while ((t+=dt) < tF)
-        c[1] = dt * G(y, t, params)
-        c[2] = dt * G(y + c[1]/2, t + dt/2, params)
-        c[3] = dt * G(y + c[2]/2, t + dt/2, params)
-        c[4] = dt * G(y + c[3], t + dt, params)
         y = y + (c[1] + 2*c[2] + 2*c[3] + c[4])/6
-        @printf "%lf\t%lf\n" t auxY[i]
-        i += 1
+
+        c[1] = dt * G(z, t, params)
+        c[2] = dt * G(z + c[1]/2, t + dt/2, params)
+        c[3] = dt * G(z + c[2]/2, t + dt/2, params)
+        c[4] = dt * G(z + c[3], t + dt, params)
+        z = z + (c[1] + 2*c[2] + 2*c[3] + c[4])/6
+
+        @printf "%lf\t%lf\n" t abs(y[1] - z[1])
     end
 
 end
