@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.6.12)  31 JUL 2018 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.6.12)  31 JUL 2018 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**q1
-(./q1.tex
+**q2
+(./q2.tex
 LaTeX2e <2017/01/01> patch level 3
 Babel <3.9r> and hyphenation patterns for 6 language(s) loaded.
-(./std.tex (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+(../std.tex (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -642,19 +642,19 @@ Package minitoc Info: I0003
 \mtc@hstrutbox=\box29
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
-\openout3 = `q1.mtc0'.
+\openout3 = `q2.mtc0'.
 
-\openout3 = `q1.mtc'.
+\openout3 = `q2.mtc'.
 
- (./q1.mtc0)
+ (./q2.mtc0)
 Package minitoc Info: I0012
 (minitoc)             Long extensions (Unix-like) will be used.
 Package minitoc Info: I0031
 (minitoc)             ==> this version is configured for UNIX-like 
 (minitoc)                 (long extensions) file names.
-\openout3 = `q1.mtc'.
+\openout3 = `q2.mtc'.
 
-\openout3 = `q1.mtc0'.
+\openout3 = `q2.mtc0'.
 
 \c@mtc=\count119
 \c@minitocdepth=\count120
@@ -2143,25 +2143,25 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)) (./q1.aux)
-\openout1 = `q1.aux'.
+)) (./q2.aux)
+\openout1 = `q2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -2171,17 +2171,17 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count270
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 3.
+LaTeX Info: Redefining \pageref on input line 3.
+LaTeX Info: Redefining \nameref on input line 3.
 
-(./q1.out) (./q1.out)
+(./q2.out) (./q2.out)
 \@outlinefile=\write5
-\openout5 = `q1.out'.
+\openout5 = `q2.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 25.
+(lastpage)             ! on input line 3.
 \c@minilofdepth=\count271
 \c@minilotdepth=\count272
 \c@partlofdepth=\count273
@@ -2244,92 +2244,44 @@ e
 ))
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count283
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (11.30615pt too wide) in paragraph at lines 46--47
-[]\OT1/cmr/m/n/10 Basta ent~ao im-ple-men-tar o al-go-ritmo des-crito acima, fo
-rnecendo-se as condi^^Xc~oes
- []
-
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 50.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 50.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 50.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+ 
 AED: lastpage setting LastPage
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
-(minitoc)             Creating the q1.maf file.
-\openout3 = `q1.maf'.
+(minitoc)             Creating the q2.maf file.
+\openout3 = `q2.maf'.
 
 
 
 Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
-(minitoc(hints))                in the q1.log file.
+(minitoc(hints))                in the q2.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
-(./q1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
-Package rerunfilecheck Info: File `q1.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 6.
+(./q2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6.
+Package rerunfilecheck Info: File `q2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6.
  ) 
 Here is how much of TeX's memory you used:
- 30997 strings out of 494884
- 586918 string characters out of 6179236
- 733558 words of memory out of 5000000
- 33648 multiletter control sequences out of 15000+600000
- 10931 words of font info for 43 fonts, out of 8000000 for 9000
+ 30368 strings out of 494884
+ 578874 string characters out of 6179236
+ 687564 words of memory out of 5000000
+ 33061 multiletter control sequences out of 15000+600000
+ 4239 words of font info for 16 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 57i,11n,67p,10390b,1363s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
-st, replaced by a fixed one
+ 57i,5n,67p,10393b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on q1.pdf (2 pages, 150224 bytes).
+Output written on q2.pdf (1 page, 1226 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
+ 16 PDF objects out of 1000 (max. 8388607)
+ 12 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

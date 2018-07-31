@@ -43,7 +43,7 @@ Seja $v_i = \dv{x}{t} (t_i)$ e $x_i = x(t_i)$, podemos utilizar o método das di
   v_i &=sin(t_i) - x_i^3. \label{eq:2}
 \end{flalign}
 
-Basta então implementar o algoritmo descrito acima, fornecendo-se as condições iniciais. Com as condições iniciais, o tempo inicial e o número de pontos $N$ que se deseja utilizar para fazer o cálculo, uma possível implementação é mostrada no código em C abaixo, onde \texttt{MAX_T} é o valor máximo para $t$ e $t_0 \leftarrow 0.0$.
+Basta então implementar o algoritmo descrito acima, fornecendo-se as condições iniciais. Com as condições iniciais, o tempo inicial e o número de pontos $N$ que se deseja utilizar para fazer o cálculo, uma possível implementação é mostrada no código em C abaixo, onde \texttt{MAX_T} é o valor máximo para $t$ e $t_0 \leftarrow 0.0$ \footnote{Código completo em \url{https://github.com/AlexEnrique/comp-physics-pratice7}}.
 
 \begin{lstlisting}
 	tau = (double)MAX_T/N;
