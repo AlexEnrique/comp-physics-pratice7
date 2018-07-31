@@ -5,7 +5,20 @@
 \author{Alex Enrique Crispim}
 \maketitle
 
-O método de Euler é o método mais simples para resolução de equações diferenciais ordinarias (EDO's). Uma extensão do método se dá pelo que é chamado \texit{método de Euler-Cromer}, cuja diferença está, basicamente, na ordem de atualização entre a derivada primeira (a qual chamaremos velocidade) e a função em busca. 
+O método de Euler é o método mais simples para resolução de equações diferenciais ordinarias (EDO's). Uma extensão do método se dá pelo que é chamado \textit{método de Euler-Cromer}, cuja diferença está, basicamente, na ordem de atualização entre a derivada primeira (a qual chamaremos velocidade) e a função em busca.
+
+Para a EDO
+\begin{equation*}
+  \dv{x}{t} = -x^3 + \sin(t),
+\end{equation*}
+temos apenas o método de Euler, dos citados anteriormente.
+
+Seja $v_i = \dv{x}{t} (t_i)$ e $x_i = x(t_i)$, podemos utilizar o método das diferenças finitas e escrever
+\begin{flalign*}
+  x_{i+1} &= x_i + \tau v_i , \\ 
+  &= x_i + \tau (sin(t_i) - x_i^3).
+\end{flalign*}
+
 
 
 
