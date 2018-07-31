@@ -1,4 +1,26 @@
 \input{../std.tex}
+\newenvironment{tk3} {
+\tikzstyle{loop} = [regular polygon, regular polygon sides=6, shape aspect=0.3, minimum width=1cm, minimum height=1cm, draw,scale=.7, align=center, text width=0.9	cm, fill = blue!15]
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=.7cm,text centered, draw=black, fill=red!30, text width = 6cm]
+
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width = 4cm]
+
+\tikzstyle{processSmall} = [rectangle, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width = 2cm]
+
+\tikzstyle{decision} = [diamond, draw, fill=yellow!30,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+
+\tikzstyle{line} = [draw, -latex']
+
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm, minimum height=2em, text width = 4cm]
+
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=-70, text centered, text width = 3.5cm, minimum height=1cm, minimum width=2cm, draw=black, fill=blue!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [draw, -latex']
+} {  }
+
 
 \begin{document}
   \begin{center}
@@ -59,12 +81,13 @@
     x(t + h) = x(t) + \frac{1}{2} (K_1 + K_2),
     \label{eq:2}
   \end{equation}
-  \begin{equation*}
+  \begin{equation}
     \begin{cases}
       K_1 = h f(t,x), \\
       K_2 = h f(t + h, x + K_1).
     \end{cases}
-  \end{equation*}
+    \label{eq:3}
+  \end{equation}
 
   Abaixo apresentamos o algoritmo, de forma mais direta, para o método de Runge-Kutta.
 
@@ -72,10 +95,27 @@
     \center
     \begin{tk3}
     \begin{tikzpicture}[node distance = 15 mm, auto]
-      
+      \node (start) [startstop] {Algoritmo de Runge-Kutta};
+      \node (initializing) [process, below of = start] {Inicializa $f(t, x)$, $t  \leftarrow t_0$, $t_f$, $x_0$ e $h$};
+      \node (CalcKs) [process, below of = initializing] {Calcula $K_1$ e $K_2$ via (\ref{eq:3}).};
+      \node (newX) [process, below of = CalcKs] {$x_{i+1} = x_i + \frac{1}{2} (K_1 + K_2)$; \\ $t \leftarrow t + h$};
+      \node (dec) [decision, right of = newX, xshift = 8mm] {$(t > t_f)$?};
+      \node (printX) [io, below of = newX] {Imprime \texttt{x[]} em função de $t$.};
+      \node (stop) [startstop, below of = printX] {Finalizado};
+
+      \draw [arrow] (start) -- (initializing);
+      \draw [arrow] (initializing) -- (CalcKs);
+      \draw [arrow] (CalcKs) -- (newX);
+      \draw [arrow] (newX) -- (dec);
+      \path [line]  (dec) -- (3.8,-3.0) -- node [anchor = south]{não} (CalcKs);
+      \path [line]  (dec) -- (3.8,-6.0) -- node [anchor = north]{sim} (printX);
+      \draw [arrow] (printX) -- (stop);
     \end{tikzpicture}
     \end{tk3}
+    \caption{Algoritmo de Runge-Kutta para a solução de EDO's}
   \end{figure}
+
+  Uma implementação do algoritmo descrito acima pode ser encontrado na pasta \textit{question 2} do endereço: \url{https://github.com/AlexEnrique/comp-physics-pratice7}.
 
 
 \end{document}
