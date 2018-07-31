@@ -8,7 +8,7 @@
 
 \tikzstyle{processSmall} = [rectangle, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width = 2cm]
 
-\tikzstyle{decision} = [diamond, draw, fill=yellow!30, 
+\tikzstyle{decision} = [diamond, draw, fill=yellow!30,
     text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
 
 \tikzstyle{line} = [draw, -latex']
@@ -39,7 +39,7 @@ temos apenas o método de Euler, dos citados anteriormente, visto que é uma EDO
 
 Seja $v_i = \dv{x}{t} (t_i)$ e $x_i = x(t_i)$, podemos utilizar o método das diferenças finitas e escrever
 \begin{flalign}
-  x_{i+1} &= x_i + \tau v_i , \label{eq:1} \\ 
+  x_{i+1} &= x_i + \tau v_i , \label{eq:1} \\
   v_i &=sin(t_i) - x_i^3. \label{eq:2}
 \end{flalign}
 
@@ -48,15 +48,15 @@ Basta então implementar o algoritmo descrito acima, fornecendo-se as condiçõe
 \begin{lstlisting}
 	tau = (double)MAX_T/N;
     for (unsigned int i = 0; i < N; i++) {
-	  x += tau * v;      
+	  x += tau * v;
       v = -pow(x,3) + sin(i*tau);
       fprintf(fPtr, "%lf\t%lf\n", i*tau, x);
-    }	
+    }
 \end{lstlisting}
 
-O método de Euler (ou Euler-Cromer) tem seu erro da ordem da divisão do intervalo da variável dependente, no nosso caso, o erro é $\order{\tau}$. 
+O método de Euler (ou Euler-Cromer) tem seu erro da ordem da divisão do intervalo da variável dependente, no nosso caso, o erro é $\order{\tau}$.
 
-Na página seguinte, temos um fluxograma do algoritmo  para o método utilizado. 
+Na página seguinte, temos um fluxograma do algoritmo  para o método utilizado.
 
 \begin{figure}[h]
 	\center
@@ -69,7 +69,7 @@ Na página seguinte, temos um fluxograma do algoritmo  para o método utilizado.
 		\node (dec) [decision, right of = incr, xshift = 8mm] {$i>N$?};
 		\node (outXV) [io, below of = incr] {Imprime ou plota o array \texttt{x[] = [$x_i$]}};
 		\node (final) [startstop, below of = outXV] {Finalizado};
-		
+
 		\draw [arrow] (inicio) -- (inicializa);
 		\draw [arrow] (inicializa) -- (for);
 		\draw [arrow] (for) -- (incr);
