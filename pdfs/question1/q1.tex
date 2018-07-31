@@ -1,23 +1,87 @@
 \input{std.tex}
+\newenvironment{tk3} {
+\tikzstyle{loop} = [regular polygon, regular polygon sides=6, shape aspect=0.3, minimum width=1cm, minimum height=1cm, draw,scale=.7, align=center, text width=0.9	cm, fill = blue!15]
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=.7cm,text centered, draw=black, fill=red!30, text width = 6cm]
+
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width = 4cm]
+
+\tikzstyle{processSmall} = [rectangle, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width = 2cm]
+
+\tikzstyle{decision} = [diamond, draw, fill=yellow!30, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+
+\tikzstyle{line} = [draw, -latex']
+
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm, minimum height=2em, text width = 4cm]
+
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=-70, text centered, text width = 3.5cm, minimum height=1cm, minimum width=2cm, draw=black, fill=blue!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [draw, -latex']
+} {  }
+
 
 \begin{document}
-\title{Prática 7 - Questão 1}
-\author{Alex Enrique Crispim}
-\maketitle
+\begin{center}
+	\LARGE \textbf{Física Computacional} \\
+	\Large \textbf{Prática 7 - Questão 1} \\
+	\large Alex Enrique Crispim
+\end{center}
 
-O método de Euler é o método mais simples para resolução de equações diferenciais ordinarias (EDO's). Uma extensão do método se dá pelo que é chamado \textit{método de Euler-Cromer}, cuja diferença está, basicamente, na ordem de atualização entre a derivada primeira (a qual chamaremos velocidade) e a função em busca.
+O método de Euler é o método mais simples para resolução de equações diferenciais ordinarias (EDO's). Uma extensão do método se dá pelo que é chamado \textit{método de Euler-Cromer}, cuja diferença está, basicamente, na ordem de atualização entre a derivada primeira (a qual chamaremos $v$) e a função em busca ($x(t)$).
 
 Para a EDO
 \begin{equation*}
   \dv{x}{t} = -x^3 + \sin(t),
 \end{equation*}
-temos apenas o método de Euler, dos citados anteriormente.
+temos apenas o método de Euler, dos citados anteriormente, visto que é uma EDO de primeira ordem.
 
 Seja $v_i = \dv{x}{t} (t_i)$ e $x_i = x(t_i)$, podemos utilizar o método das diferenças finitas e escrever
-\begin{flalign*}
-  x_{i+1} &= x_i + \tau v_i , \\ 
-  &= x_i + \tau (sin(t_i) - x_i^3).
-\end{flalign*}
+\begin{flalign}
+  x_{i+1} &= x_i + \tau v_i , \label{eq:1} \\ 
+  v_i &=sin(t_i) - x_i^3. \label{eq:2}
+\end{flalign}
+
+Basta então implementar o algoritmo descrito acima, fornecendo-se as condições iniciais. Com as condições iniciais, o tempo inicial e o número de pontos $N$ que se deseja utilizar para fazer o cálculo, uma possível implementação é mostrada no código em C abaixo, onde \texttt{MAX_T} é o valor máximo para $t$ e $t_0 \leftarrow 0.0$.
+
+\begin{lstlisting}
+	tau = (double)MAX_T/N;
+    for (unsigned int i = 0; i < N; i++) {
+	  x += tau * v;      
+      v = -pow(x,3) + sin(i*tau);
+      fprintf(fPtr, "%lf\t%lf\n", i*tau, x);
+    }	
+\end{lstlisting}
+
+O método de Euler (ou Euler-Cromer) tem seu erro da ordem da divisão do intervalo da variável dependente, no nosso caso, o erro é $\order{\tau}$. 
+
+Na página seguinte, temos um fluxograma do algoritmo  para o método utilizado. 
+
+\begin{figure}[h]
+	\center
+	\begin{tk3}
+	\begin{tikzpicture}[node distance = 15mm, auto]
+		\node (inicio) [startstop] {Resolução de EDOs via Método de Euler};
+		\node (inicializa) [process, below of = inicio] {Inicializa $x(0)$ e $v(0)$, $\tau$, $N$ e $i=0$};
+		\node (for) [process, below of = inicializa] {Calcula $x_{i+1}$ e $v_{i+1}$ via (\ref{eq:1}) e (\ref{eq:2})};
+		\node (incr) [process, below of = for] {\texttt{i++}};
+		\node (dec) [decision, right of = incr, xshift = 8mm] {$i>N$?};
+		\node (outXV) [io, below of = incr] {Imprime ou plota o array \texttt{x[] = [$x_i$]}};
+		\node (final) [startstop, below of = outXV] {Finalizado};
+		
+		\draw [arrow] (inicio) -- (inicializa);
+		\draw [arrow] (inicializa) -- (for);
+		\draw [arrow] (for) -- (incr);
+		\draw [arrow] (incr) -- (dec);
+		\path [line] (dec) -- (3.8, -3) -- node [anchor=south]{não}(for);
+		\path [line] (dec) -- (3.8, -6) -- node [anchor=north]{sim}(outXV);
+		\draw [arrow] (outXV) -- (final);
+	\end{tikzpicture}
+	\end{tk3}
+\end{figure}
+
+
 
 
 
