@@ -1,0 +1,82 @@
+\input{../std.tex}
+\newenvironment{tk3} {
+\tikzstyle{loop} = [regular polygon, regular polygon sides=6, shape aspect=0.3, minimum width=1cm, minimum height=1cm, draw,scale=.7, align=center, text width=0.9	cm, fill = blue!15]
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=.7cm,text centered, draw=black, fill=red!30, text width = 6cm]
+
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width = 4cm]
+
+\tikzstyle{processSmall} = [rectangle, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width = 2cm]
+
+\tikzstyle{decision} = [diamond, draw, fill=yellow!30,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+
+\tikzstyle{line} = [draw, -latex']
+
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm, minimum height=2em, text width = 4cm]
+
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=-70, text centered, text width = 3.5cm, minimum height=1cm, minimum width=2cm, draw=black, fill=blue!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [draw, -latex']
+} {  }
+
+\begin{document}
+  \begin{center}
+    \LARGE \textbf{Física Computacional} \\
+    \Large \textbf{Tarefa 7 - Questão 3} \\
+    \large Alex Enrique Crispim
+  \end{center}
+
+  O método de Runge-Kutta de quarta ordem segue uma ideia semelhante ao caso feito para a questão 2, porém tomando a expansão até quarta ordem.
+
+  Seguindo o mesmo procedimento, com um pouco mais de álgebra, chegamos às seguintes equações:
+  \begin{equation}
+    x(t+ h) = x(t) + \frac{1}{6} \qty(K_1 + 2K_2 + 2K_3 + K_4).
+    \label{eq:1}
+  \end{equation}
+  \begin{equation}
+    \begin{cases}
+      K_1 &= h f(t, x) , \\
+      K_2 &= h f(t + \frac{1}{2} h, x + \frac{1}{2} K_1), \\
+      K_3 &= h f(t + \frac{1}{2} h, x + \frac{1}{2} K_2), \\
+      K_4 &= h f(t + h, x + K_3).
+    \end{cases}
+    \label{eq:2}
+  \end{equation}
+
+  O algoritmo para o método Runge-Kutta-4 é praticamente o mesmo para o Runge-Kutta-2, como mostrado abaixo.
+  \begin{figure}[h]
+    \center
+    \begin{tk3}
+    \begin{tikzpicture}[node distance = 15 mm, auto]
+      \node (start) [startstop] {Algoritmo de Runge-Kutta de quarta ordem};
+      \node (initializing) [process, below of = start] {Inicializa $f(t, x)$, $t  \leftarrow t_0$, $t_f$, $x_0$ e $h$};
+      \node (CalcKs) [process, below of = initializing] {Calcula $K_1$, $K_2$, $K_3$ e $K_4$ via (\ref{eq:2}).};
+      \node (newX) [process, below of = CalcKs] {$x_{i+1} = x_i + \frac{1}{2} (K_1 + 2K_2 + 2K_3 + K_4)$; (eq. \ref{eq:1}) \\ $t \leftarrow t + h$};
+      \node (dec) [decision, right of = newX, xshift = 8mm] {$(t > t_f)$?};
+      \node (printX) [io, below of = newX] {Imprime \texttt{x[]} em função de $t$.};
+      \node (stop) [startstop, below of = printX] {Finalizado};
+
+      \draw [arrow] (start) -- (initializing);
+      \draw [arrow] (initializing) -- (CalcKs);
+      \draw [arrow] (CalcKs) -- (newX);
+      \draw [arrow] (newX) -- (dec);
+      \path [line]  (dec) -- (3.8,-3.0) -- node [anchor = south]{não} (CalcKs);
+      \path [line]  (dec) -- (3.8,-6.0) -- node [anchor = north]{sim} (printX);
+      \draw [arrow] (printX) -- (stop);
+    \end{tikzpicture}
+    \end{tk3}
+    \caption{Algoritmo de RK4 para a solução de EDO's}
+  \end{figure}
+
+  Uma implementação do algoritmo RK4 pode ser encontrado na pasta \textit{question 3} do endereço: \url{https://github.com/AlexEnrique/comp-physics-pratice7}.
+
+  É importante mencionar que, como o próprio nome do método sugere, o algoritmo RK4 tem seu erro de quinta ordem em $h$ (a série é truncada em quarta ordem). Isso significa uma convergência muito mais rápida em comparação com RK2 (Runge-Kutta de segunda ordem). Como exemplo, considere $h = 10^{-2}$. Para RK2 temos um erro de ordem $\order{10^{-6}}$, enquanto que para RK4 o erro é $\order{10^{-10}}$.
+
+  O grande problema com o algoritmo RK4 está 
+
+
+
+
+\end{document}
