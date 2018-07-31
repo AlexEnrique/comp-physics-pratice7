@@ -1,6 +1,81 @@
 \input{../std.tex}
 
 \begin{document}
-  
+  \begin{center}
+    \LARGE \textbf{Física Computacional} \\
+    \Large \textbf{Tarefa 7 - Questão 2} \\
+    \large Alex Enrique Crispim
+  \end{center}
+
+  Buscamos, agora, resolver a mesma EDO
+  \begin{equation*}
+    x^\prime (t) = f(t, x) , \\
+    x(0) = x_0,
+  \end{equation*}
+  por meio do \textit{Método de Runge-Kutta}. O método consiste em tomar o ponto médio do intervalo para o qual fizemos diferenças finitas, quando usamos Euler, para determinar um ponto intermediário de tal forma que possamos reduzir a ordem do erro.
+
+  Quando utilizamos o método de Euler, de modo implicito, utilizamos uma aproximação via Polinômio de Taylo (série de Taylor truncada) de primeira ordem. De outra forma, tomamos a série
+  \begin{equation*}
+    x(t + h) = x(t) + h x^\prime (t) + \frac{h^2}{2!} x^{\prime \prime}(t) + ...,
+  \end{equation*}
+  até o termo linear em $h$ resultando em $x(t+h) = x(t) + h x^\prime (t)$. O método de Runge-Kutta busca seguir a mesma ideia de aproximação por Taylor, porém truncando a série no termo de ordem quadrátrica em $h$, de tal forma que o erro passa a ser $\order{h^3}$.
+
+  O termo de primeira ordem reproduz o método de Euler; é simplesmente $h f$ (omitiremos os argumentos daqui para frente e as derivadas parciais para $f$ serão denotadas com subscritos como $f_t, \ f_{txx}$). O termo de segunda ordem pode ser obtido da seguinte forma:
+  \begin{equation*}
+    x^{\prime \prime} (t) = \dv{f}{t} = \pdv{f}{t} \dv{t}{t} + \pdv{f}{x} \dv{x}{t} = f_t + f_x f,
+  \end{equation*}
+  produzindo
+  \begin{flalign*}
+    x(t+h) &= x + h f + \frac{h^2}{2} \qty(f_t + f_x f) + \order{h^3}, \\
+           &= x + h f + \frac{1}{2} h^2 f_t + \frac{1}{2} h^2 f f_x + \order{h^3}.
+  \end{flalign*}
+
+  Podemos agora expandir $\dv*{f}{t}$ em Taylor para que os termos da forma $f_t + f f_x$ sejam escritos em termos de $f$, usando a aproximação de Euler ($x(t+h) = x + hf$).
+  \begin{equation*}
+    f(t + \alpha h, x + \beta h f) = f + \alpha h f_t + \beta h f f_x + \frac{1}{2} \qty(\alpha h \pdv{t} + \beta h \pdv{x})^2 f(\bar{t}, \bar{x}).
+  \end{equation*}
+
+  Utilizamos dois parâmetros ($\alpha$ e $\beta$) a serem ajustados de forma a produzir a aproximação desejada por Taylor (melhor aproximação). O erro da aproximação em primeira ordem é guardado no termo final (quadrático em $h$).
+
+  Se escrevemos nossa expansão para $x(t+h)$ como
+  \begin{equation*}
+    x(t+h) = x + w_1 h f + w_2 h f(t + \alpha h, x + \beta h f),
+  \end{equation*}
+  podemos utilizar a expansão anterior no termo à direita de $w_2$ e comparar com a expansão em Taylor original para ajustar os parâmetros inserido.
+
+  \begin{equation}
+    x(t + h) = x + (w_1 + w_2) h f + \alpha w_2 h^2 f_t + \beta w_2 f f_x + \order{h^3}.
+    \label{eq:1}
+  \end{equation}
+
+  Por comparação da expressão de Taylor obtida com (\ref{eq:1}), temos as seguintes relações:
+  \begin{flalign*}
+    & w_1 + w_2 = 1 \qc \alpha w_2 = \frac{1}{2} \qc \beta w_2 = \frac{1}{2}, \\
+    & \alpha = 1 \qc \beta = 1 \qc w_1 = w_2 = \frac{1}{2}.
+  \end{flalign*}
+
+  Assim, podemos escrever
+  \begin{equation}
+    x(t + h) = x(t) + \frac{1}{2} (K_1 + K_2),
+    \label{eq:2}
+  \end{equation}
+  \begin{equation*}
+    \begin{cases}
+      K_1 = h f(t,x), \\
+      K_2 = h f(t + h, x + K_1).
+    \end{cases}
+  \end{equation*}
+
+  Abaixo apresentamos o algoritmo, de forma mais direta, para o método de Runge-Kutta.
+
+  \begin{figure}[h]
+    \center
+    \begin{tk3}
+    \begin{tikzpicture}[node distance = 15 mm, auto]
+      
+    \end{tikzpicture}
+    \end{tk3}
+  \end{figure}
+
 
 \end{document}
