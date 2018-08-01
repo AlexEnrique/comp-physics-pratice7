@@ -74,9 +74,51 @@
 
   É importante mencionar que, como o próprio nome do método sugere, o algoritmo RK4 tem seu erro de quinta ordem em $h$ (a série é truncada em quarta ordem). Isso significa uma convergência muito mais rápida em comparação com RK2 (Runge-Kutta de segunda ordem). Como exemplo, considere $h = 10^{-2}$. Para RK2 temos um erro de ordem $\order{10^{-6}}$, enquanto que para RK4 o erro é $\order{10^{-10}}$.
 
-  O grande problema com o algoritmo RK4 está 
+  O grande problema com o algoritmo RK4 se dá quando a EDO envolvida é tal que as soluções se distanciam entre si conforme a variável $t$ cresce. Por exemplo, para a EDO $x^\prime = 10x + 11 t - 5t^2 - 1 $, com $x(0) = 0$, o método RK4 nos dá um resultado errado. As figuras abaixo mostram as soluções exatas (vermelho) e via RK4 para a EDO acima.
+  \begin{figure}[h]
+    \center
+    \includegraphics[scale = .45]{Figure1}
+    \includegraphics[scale = .45]{Figure2}
+  \end{figure}
 
+  O problema se deve ao fato de que, uma variação $h$ nas condições iniciais leva a uma variação muito grande dos valores esperados para a função. Considere por exemplo a EDO dada por
+  \begin{equation*}
+    x^\prime = f(t, x), \\
+    x(0) = s.
+  \end{equation*}
 
+  Se trocamos $s$ por $s+h$ (o que é induzido, por exemplo, por um erro de arredondamento), devemos considerar a função $x(t)$ como a depender do parâmetro $s$ da forma de uma variável, escrevendo $x(t, s)$ no lugar. Podemos expandir $x(t, s+h)$ em Taylor da seguinte forma
+  \begin{equation*}
+    x(t, s+h) = x(t,s) + h \pdv{s} x(t, s) + \order{h^2}.
+  \end{equation*}
 
+  A divergência entre a função esperada $x(t, s)$ e $x(t, s+h)$ pode ser escrita como
+  \begin{equation*}
+    \lim_{t \to \infty} \abs{x(t, s+h) - x(t,s)} = \infty \Leftrightarrow \lim_{t \to \infty} \abs{\pdv{s} x(t, s)} = \infty
+  \end{equation*}
+
+  Para calcular a derivada parcial de $x$ com relação a $s$, usamos o seguinte procedimento:
+  \begin{equation*}
+    \pdv{t} \pdv{s} x(t, s) = \pdv{s} \pdv{t} x(t,s) = f_x(t, x(t,s)) \pdv{s} x(t,s) + f_t(t, x(t,s)) \pdv{t}{s},
+  \end{equation*}
+  como uma variação em $t$ não depende de uma variação em $s$, $\pdv{t}{s} = 0$ e fazendo $u(t) = \pdv{s} x(t,s)$ e $q(t) = f_x(t, x(t,s))$, obtemos a seguinte EDO, da relação anterior:
+  \begin{equation*}
+    u^\prime = q u ,
+  \end{equation*}
+  cuja solução é $u = c e^{Q(t)}$, com
+  \begin{equation*}
+    Q(t) = \int_a^t \dd{\theta} q(\theta).
+  \end{equation*}
+
+  A divergência do limite de $\abs{\pdv*{x}{s}}$ se dá então pela divergência de $Q(t)$ (pois leva a diergir ($u$)).
+
+  Se $Q$ for uma função positiva e limitada inferiormente por um valor maior do que zero, é fácil ver que a função diverge:
+  \begin{equation*}
+    Q(t) = \int_a^t \dd{\theta} q(\theta) > \int_a^t \delta \dd{\theta} = \delta (t-a) \xrightarrow[t \to \infty]{} \infty.
+  \end{equation*}
+
+  A conclusão final é: a solução diverge se $f_x > \delta$ e converge quando $f_x < - \delta$, com $\delta > 0$.
+
+  Para a EDO fornecida para as questões 1, 2 e 3, $f(t, x) = - x^3 + \sin(t)$ e, logo, $f_x = -x^2 \leq 0, \forall x$, enquando que a EDO mal-comportada acima leva à $f_x = 10 > 0$, divergindo do valor real.
 
 \end{document}
