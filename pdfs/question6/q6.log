@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.6.12)  31 JUL 2018 21:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.6.12)  31 JUL 2018 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2260,11 +2260,29 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Package epstopdf Info: Source file: <q6Fig.eps>
+(epstopdf)                    date: 2018-07-31 21:42:07
+(epstopdf)                    size: 29305 bytes
+(epstopdf)             Output file: <q6Fig-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-31 21:58:42
+(epstopdf)                    size: 11102 bytes
+(epstopdf)             Command: <repstopdf --outfile=q6Fig-eps-converted-to.pdf
+ q6Fig.eps>
+(epstopdf)             \includegraphics on input line 33.
+Package epstopdf Info: Output file is already uptodate.
 
+<q6Fig-eps-converted-to.pdf, id=7, 361.35pt x 216.81pt>
+File: q6Fig-eps-converted-to.pdf Graphic file (type pdf)
+
+<use q6Fig-eps-converted-to.pdf>
+Package pdftex.def Info: q6Fig-eps-converted-to.pdf used on input line 33.
+(pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./q6Fig-eps-converted-to.p
+df>] 
 AED: lastpage setting LastPage
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the q6.maf file.
@@ -2276,23 +2294,23 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the q6.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
 (./q6.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
 Package rerunfilecheck Info: File `q6.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 32.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
  ) 
 Here is how much of TeX's memory you used:
- 30439 strings out of 494884
- 580069 string characters out of 6179236
- 691762 words of memory out of 5000000
- 33102 multiletter control sequences out of 15000+600000
+ 30458 strings out of 494884
+ 580265 string characters out of 6179236
+ 690762 words of memory out of 5000000
+ 33106 multiletter control sequences out of 15000+600000
  8590 words of font info for 33 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 57i,7n,67p,10393b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,11n,67p,10393b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -2304,10 +2322,10 @@ public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on q6.pdf (1 page, 110173 bytes).
+Output written on q6.pdf (2 pages, 119622 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
