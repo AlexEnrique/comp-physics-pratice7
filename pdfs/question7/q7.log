@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.6.12)  31 JUL 2018 22:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.6.12)  31 JUL 2018 22:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**q6
-(./q6.tex
+**q7
+(./q7.tex
 LaTeX2e <2017/01/01> patch level 3
 Babel <3.9r> and hyphenation patterns for 6 language(s) loaded.
 (../std.tex (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -648,19 +648,19 @@ Package minitoc Info: I0003
 \mtc@hstrutbox=\box29
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
-\openout3 = `q6.mtc0'.
+\openout3 = `q7.mtc0'.
 
-\openout3 = `q6.mtc'.
+\openout3 = `q7.mtc'.
 
- (./q6.mtc0)
+ (./q7.mtc0)
 Package minitoc Info: I0012
 (minitoc)             Long extensions (Unix-like) will be used.
 Package minitoc Info: I0031
 (minitoc)             ==> this version is configured for UNIX-like 
 (minitoc)                 (long extensions) file names.
-\openout3 = `q6.mtc'.
+\openout3 = `q7.mtc'.
 
-\openout3 = `q6.mtc0'.
+\openout3 = `q7.mtc0'.
 
 \c@mtc=\count119
 \c@minitocdepth=\count120
@@ -2149,8 +2149,8 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)) (./q6.aux)
-\openout1 = `q6.aux'.
+)) (./q7.aux)
+\openout1 = `q7.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -2181,9 +2181,9 @@ LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
 LaTeX Info: Redefining \nameref on input line 3.
 
-(./q6.out) (./q6.out)
+(./q7.out) (./q7.out)
 \@outlinefile=\write5
-\openout5 = `q6.out'.
+\openout5 = `q7.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
@@ -2260,72 +2260,67 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package epstopdf Info: Source file: <q6Fig.eps>
-(epstopdf)                    date: 2018-07-31 21:42:07
-(epstopdf)                    size: 29305 bytes
-(epstopdf)             Output file: <q6Fig-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-07-31 21:58:42
-(epstopdf)                    size: 11102 bytes
-(epstopdf)             Command: <repstopdf --outfile=q6Fig-eps-converted-to.pdf
- q6Fig.eps>
-(epstopdf)             \includegraphics on input line 33.
+Package epstopdf Info: Source file: <LogDif.eps>
+(epstopdf)                    date: 2018-07-31 22:03:55
+(epstopdf)                    size: 16342 bytes
+(epstopdf)             Output file: <LogDif-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-31 22:04:12
+(epstopdf)                    size: 7652 bytes
+(epstopdf)             Command: <repstopdf --outfile=LogDif-eps-converted-to.pd
+f LogDif.eps>
+(epstopdf)             \includegraphics on input line 13.
 Package epstopdf Info: Output file is already uptodate.
 
-<q6Fig-eps-converted-to.pdf, id=7, 361.35pt x 216.81pt>
-File: q6Fig-eps-converted-to.pdf Graphic file (type pdf)
+<LogDif-eps-converted-to.pdf, id=7, 361.35pt x 216.81pt>
+File: LogDif-eps-converted-to.pdf Graphic file (type pdf)
 
-<use q6Fig-eps-converted-to.pdf>
-Package pdftex.def Info: q6Fig-eps-converted-to.pdf used on input line 33.
+<use LogDif-eps-converted-to.pdf>
+Package pdftex.def Info: LogDif-eps-converted-to.pdf used on input line 13.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./q6Fig-eps-converted-to.p
-df>] 
+ 
 AED: lastpage setting LastPage
-[2]
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./LogDif-eps-converted-to.
+pdf>]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
-(minitoc)             Creating the q6.maf file.
-\openout3 = `q6.maf'.
+(minitoc)             Creating the q7.maf file.
+\openout3 = `q7.maf'.
 
 
 
 Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
-(minitoc(hints))                in the q6.log file.
+(minitoc(hints))                in the q7.log file.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
-(./q6.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
-Package rerunfilecheck Info: File `q6.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 19.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 19.
+(./q7.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 19.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 19.
+Package rerunfilecheck Info: File `q7.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 19.
  ) 
 Here is how much of TeX's memory you used:
- 30458 strings out of 494884
- 580265 string characters out of 6179236
- 690762 words of memory out of 5000000
- 33106 multiletter control sequences out of 15000+600000
- 8590 words of font info for 33 fonts, out of 8000000 for 9000
+ 30444 strings out of 494884
+ 580133 string characters out of 6179236
+ 688762 words of memory out of 5000000
+ 33099 multiletter control sequences out of 15000+600000
+ 7149 words of font info for 28 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 57i,11n,67p,10393b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-tt10.pfb>
-Output written on q6.pdf (2 pages, 119622 bytes).
+ 57i,6n,67p,10393b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on q7.pdf (1 page, 67788 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
+ 47 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
