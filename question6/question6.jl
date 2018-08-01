@@ -5,6 +5,7 @@ function G(y, t, params) # y = [y1, y2]
     Fd = params[4]
     OmegaD = params[5]
     # questão de legibilidade apenas
+    
     return [y[2], -(g/L)*sin(y[1]) - q*y[2] + Fd*sin(OmegaD*t)]
 end
 

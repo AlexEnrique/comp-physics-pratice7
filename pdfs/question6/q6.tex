@@ -7,7 +7,24 @@
     \large Alex Enrique Crispim
   \end{center}
 
-  
+  Podemos estender o método de Runge-Kutta descrito nas questões 2 e 3 para mais dimensões fazendo-se a troca dos $K_i$ por arrays $\vb{K}_i$, acompanhando a troca de $x^\prime = f$ por
+  \begin{equation*}
+    \dv{\vb{x}}{t} = \vb{f}(t, \vb{x}_i).
+  \end{equation*}
 
+  Para o método RK4, mas equações têm basicamente a mesma forma, trocando-se os escalares por vetores;
+  \begin{equation}
+    \vb{x}_{i+1} = \vb{x}_i + \frac{1}{6} \qty[\vb{K}_1 + 2 \vb{K}_2 + 2\vb{K}_3 + \vb{K}_4],
+  \end{equation}
+  \begin{equation*}
+    \begin{cases}
+      \vb{K}_1 = h \vb{f}(t_i, \vb{x}_i), \\
+      \vb{K}_2 = h \vb{f}(t_i + h/2, \vb{x}_i + \vb{K}_1 / 2), \\
+      \vb{K}_3 = h \vb{f}(t_i + h/2, \vb{x}_i + \vb{K}_2 / 2), \\
+      \vb{K}_4 = h \vb{f}(t_i + h, \vb{x}_i + \vb{K}_3).
+    \end{cases}
+  \end{equation*}
+
+  Em certas linguagem (geralmente as que suporta POO), a operação de produto de um array por um escalar e soma de arrays é definida da mesma forma como soma de vetores, de tal forma que podemos escrever as equações acima de forma muito natual. Um exemplo fora feito em \textit{Julia} na pasta \textit{question 6}. Como o trabalho não é tão formal, acredito não ter problema de expressar minha opinião a respeito de um primeiro contato com Julia: eu não gostei da linguagem. Algumas poucas coisas que gostei, tem-se implementadas forma melhor ou, no mínimo, quase equivalente em python. Os testes de performance que se encontram no site da linguagem me são duvidosos, após os primeiros usos da mesma. A sintaxe é incomoda em alguns pontos. Por exemplo, a contagem dos índices dos arrays começa em 1. Uma das vantagens de começar a contar a partir do 0 é o fato de pode se pensar como contando de 1, mas utilizando sempre intervalos abertos à direita e fechados à esquerda. A linguagem Julia tirou isso. Além de que a sintaxe de muitas coisas como a função \texttt{append!()} ou \texttt{push!()} para arrays, é, no mínimo, incomoda. 
 
 \end{document}
